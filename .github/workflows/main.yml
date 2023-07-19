@@ -1,0 +1,18 @@
+name: Triggered Workflow
+
+on:
+  repository_dispatch:
+    types: [repo-updated]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      
+      - name: Run your desired actions
+        run: |
+          # Your actions or commands here
+          echo "Triggered workflow!"
